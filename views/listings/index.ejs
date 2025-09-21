@@ -1,0 +1,28 @@
+<% layout("/layouts/boilerplate") %> 
+<body>
+  <div class="listings-container">
+    <h2 class="page-title">All Listings</h2>
+
+    <div class="listings-grid">
+      <% for(let listing of allListings){ %>
+      <a href="/listings/<%=listing._id%>" class="listing-card">
+        <div class="listing-image">
+          <img
+            src="<%= listing.image.url || 'https://via.placeholder.com/400x300?text=No+Image' %>"
+            alt="<%= listing.title %>"
+          />
+        </div>
+        <div class="listing-info">
+          <h3><%= listing.title %></h3>
+          <p class="listing-location">
+            <%= listing.location %>, <%= listing.country %>
+          </p>
+          <p class="listing-price">
+            &#8377; <%= Number(listing.price).toLocaleString("en-IN") %> / night
+          </p>
+        </div>
+      </a>
+      <% } %>
+    </div>
+  </div>
+</body>

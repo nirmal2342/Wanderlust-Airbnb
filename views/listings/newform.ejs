@@ -1,0 +1,101 @@
+<% layout("/layouts/boilerplate") %>
+<body class="bg-light">
+  <div class="container py-5" style="max-width: 700px">
+    <h2 class="mb-4 text-center fw-bold">Create New Listing</h2>
+    <form
+      action="/listings"
+      method="post"
+      class="p-4 shadow rounded bg-white needs-validation"
+      novalidate
+      enctype="multipart/form-data"
+    >
+      <!-- Title -->
+      <div class="mb-3">
+        <label for="title" class="form-label fw-semibold">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          name="listing[title]"
+          placeholder="Add a catchy title"
+          required
+        />
+        <div class="invalid-feedback">Please enter a title.</div>
+      </div>
+
+      <!-- Description -->
+      <div class="mb-3">
+        <label for="description" class="form-label fw-semibold"
+          >Description</label
+        >
+        <textarea
+          class="form-control"
+          id="description"
+          name="listing[description]"
+          rows="3"
+          placeholder="Enter description"
+          required
+        ></textarea>
+        <div class="invalid-feedback">Please add some description.</div>
+      </div>
+
+      <!-- Image URL --> 
+      <div class="mb-3">
+        <label for="image" class="form-label fw-semibold">Upload Image</label>
+        <input
+          type="file"
+          class="form-control"
+          id="image"
+          name="listing[image]"
+        />
+      </div>
+
+      <!-- Price -->
+      <div class="mb-3">
+        <label for="price" class="form-label fw-semibold">Price (₹)</label>
+        <input
+          type="number"
+          class="form-control"
+          id="price"
+          name="listing[price]"
+          placeholder="Enter price"
+          required
+        />
+        <div class="invalid-feedback">Please enter a valid price.</div>
+      </div>
+
+      <!-- Location -->
+      <div class="mb-3">
+        <label for="location" class="form-label fw-semibold">Location</label>
+        <input
+          type="text"
+          class="form-control"
+          id="location"
+          name="listing[location]"
+          placeholder="Enter location"
+          required
+        />
+        <div class="invalid-feedback">Please enter a valid location.</div>
+      </div>
+
+      <!-- Country -->
+      <div class="mb-4">
+        <label for="country" class="form-label fw-semibold">Country</label>
+        <input
+          type="text"
+          class="form-control"
+          id="country"
+          name="listing[country]"
+          placeholder="Enter country"
+          required
+        />
+        <div class="invalid-feedback">Please enter a valid country.</div>
+      </div>
+
+      <!-- Submit -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-danger btn-lg px-4">Submit</button>
+      </div>
+    </form>
+  </div>
+</body>
