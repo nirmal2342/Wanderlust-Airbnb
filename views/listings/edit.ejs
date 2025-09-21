@@ -8,6 +8,7 @@
       method="post"
       class="p-4 shadow rounded bg-white needs-validation"
       novalidate
+      enctype="multipart/form-data"
     >
       <!-- Title -->
       <div class="mb-3">
@@ -38,13 +39,12 @@
 
       <!-- Image URL -->
       <div class="mb-3">
-        <label for="image" class="form-label fw-semibold">Image URL</label>
+        <label for="image" class="form-label fw-semibold">Upload New Image</label>
         <input
-          type="url"
+          type="file"
           class="form-control"
           id="image"
-          name="listing[image][url]"
-          value="<%= listing.image.url %>"
+          name="listing[image]"
         />
       </div>
 
