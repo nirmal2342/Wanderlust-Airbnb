@@ -70,7 +70,9 @@ module.exports.editListing = async (req, res) => {
     res.redirect("/listings");
   }
   let originalImageUrl = listing.image.url;
-  originalImageUrl = originalImageUrl.replace("/upload","/upload/h_300, w_250");
+  originalImageUrl = originalImageUrl.replace("/upload", "/upload/w_250");
+
+  console.log("Original URL", originalImageUrl);
   res.render("./listings/edit.ejs", { listing , originalImageUrl});
 };
 
